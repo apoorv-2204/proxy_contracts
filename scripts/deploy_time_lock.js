@@ -1,6 +1,5 @@
 
-const { ethers, upgrades, hardhatArguments } = require("hardhat");
-const PROXY_ADDRESS = " "
+const { ethers } = require("hardhat");
 
 const argumentsArray = require("../argument.js")
 
@@ -8,19 +7,26 @@ async function main() {
     let delayTime = argumentsArray[0];
     let proposalArray = argumentsArray[1];
     let executorsArray = argumentsArray[2];
+    let adminAccount = argumentsArray[2];
+
 
 
     const [deployer] = await ethers.getSigners();
     console.log("deplpoying contract with address", deployer.address);
 
-    console.log("account balance:", await deployer.getBalance()).toString();
+    console.log("account balance:", (await deployer.getBalance()).toString());
 
-    const Token = await ethers.getContractFactory("TimelockController");
+    const timeLockAdminContract = await ethers.getContractFactory("TimelockController");
 
-    const token = await Token.deploy(delayTime, proposalArray, executorsArray);
+    const timeLockAdmin = await timeLockAdminContract.deploy(delayTime, proposalArray, executorsArray, adminAccount);
 
-    console.log("address.", token.address)
+    console.log("address.", timeLockAdmin.address)
 }
 
-main();
+main()
+    .then(() => process.exit(0))
+    .catch((error) => {
+        console.log(error);
+        process.exit(1);
+    })
 

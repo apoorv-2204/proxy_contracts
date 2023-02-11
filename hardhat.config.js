@@ -9,18 +9,24 @@ const { goerli_PRIVATE_KEY, Goerli_RPC_PROVIDER, ETHERSCAN_API_KEY, POLYGON_MUMB
 
 module.exports = {
 
-  solidity: { version: "0.8.6" },
+  solidity: {
+    version: "0.8.6",
+    settings: {
+      optimizer: { enabled: true, runs: 2000 }
+    }
+  },
   networks: {
-    hardhat: {
-      chainid: 1337
-    },
-    mumbai_testnet: {
-      url: POLYGON_MUMBAI_RPC_PROVIDER,
-      accounts: [`0x${PRIVATE_KEY}`]
-    },
+    // hardhat: {
+    //   chainid: 1337
+    // },
+    // mumbai_testnet: {
+    //   url: POLYGON_MUMBAI_RPC_PROVIDER,
+    //   accounts: [`0x${PRIVATE_KEY}`]
+    // },
     goerli: {
       url: Goerli_RPC_PROVIDER,
-      accounts: [`0x${goerli_PRIVATE_KEY}`]
+      accounts: [`0x${goerli_PRIVATE_KEY}`],
+      gas: 1000000//bug in hardhat
     }
   },
   paths: {
@@ -31,7 +37,7 @@ module.exports = {
   },
   etherscan: {
     apiKey: {
-      polygonMumbai: POLYGONSCAN_API_KEY,
+      // polygonMumbai: POLYGONSCAN_API_KEY,
 
       // //ethereum
       // mainnet: ETHERSCAN_API_KEY,
