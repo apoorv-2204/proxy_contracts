@@ -5,6 +5,7 @@
 npx hardhat run scripts/deploy.js --network  goerli/mumbai/hh
 npx hardhat verify --network goerli/mumbai/hh Ox...
 npx hardhat run --network mumbai_testnet scripts/upgrade_box_v2.js 
+npx hardhat verify --network goerli  0xE6A99df82Ef83D519564eD93bd741beBf6C2A52E  --constructor-args ./argument.js 
 ```
 
 ## overview

@@ -7,7 +7,7 @@ async function main() {
     let delayTime = argumentsArray[0];
     let proposalArray = argumentsArray[1];
     let executorsArray = argumentsArray[2];
-    let adminAccount = argumentsArray[2];
+    let adminAccount = argumentsArray[3];
 
 
 

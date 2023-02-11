@@ -10,19 +10,21 @@ contract Box_v2 {
     // need to have same state variable
     // same order of function
 
-    // event ValueChanged(uint newValue);
+    event ValueChanged(uint newValue);
 
-    // function initial_state_values(uint newValue) external {
-    //     value = newValue;
-    //     emit ValueChanged(newValue);
-    // }
+    // Stores a new value in the contract
+    function initial_state_values(uint newValue) external {
+        value = newValue;
+        emit ValueChanged(newValue);
+    }
 
-    // // Reads the last stored value
-    // function retrieve() public view returns (uint) {
-    //     return value;
-    // }
+    // Reads the last stored value
+    function retrieve() public view returns (uint) {
+        return value;
+    }
 
-    function increment(uint _val) external {
-        value = _val;
+    function increment() external {
+        value = value + 1;
+        emit ValueChanged(value);
     }
 }
