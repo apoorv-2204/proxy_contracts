@@ -8,7 +8,7 @@ contract Box_v1 {
     uint public value;
     // proxy contracts cant have constructors
     // they have initiliazers for state variables
-    // devlivered trhough proxy     
+    // devlivered trhough proxy
     // upgradable contracts the state variables insie impl are never used
 
     // Emitted when the stored value changes

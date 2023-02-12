@@ -21,6 +21,7 @@ contract Box_v2 {
     // Reads the last stored value
     function retrieve() public view returns (uint) {
         return value;
+        // View function declares that no state will be changed. Pure function declares that no state variable will be changed or read.
     }
 
     function increment() external {
