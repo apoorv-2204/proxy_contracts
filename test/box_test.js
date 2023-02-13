@@ -14,10 +14,10 @@ describe("BoxContractTestingv1", function () {
   });
 
   it("Should return the new value once it's changed", async function () {
-    expect(await box.retrieve()).to.equal(0);
+    expect((await box.retrieve()).toString()).to.equal("0");
 
     await box.initial_state_values(9909);
 
-    expect(await box.retrieve()).to.equal(9909);
+    expect((await box.retrieve()).toString()).to.equal("9909");
   });
 });

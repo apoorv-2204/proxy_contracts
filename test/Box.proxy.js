@@ -7,11 +7,11 @@ describe("Box-Proxy", function () {
         Box = await ethers.getContractFactory("Box_v1");
         // deploy proxy structure and proxy contract
         // not useing retrieve beacuse we need state management functions   
-        box = await upgrades.deployProxy(Box, [100], { initializer: "initial_state_values" });
+        box = await upgrades.deployProxy(Box, ["100"], { initializer: "initial_state_values" });
     });
 
     it('reterive - returns a value previously initialized', async function () {
-        expect((await box.retrieve())).to.equal(100);
+        expect((await box.retrieve()).toString()).to.equal("100");
     });
 });
 

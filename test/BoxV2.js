@@ -16,7 +16,7 @@ describe("BoxV2 functionality", async () => {
     it("Must Initialize the values . ", async () => {
         await BoxV2Contract.initial_state_values(9087)
 
-        expect(await BoxV2Contract.retrieve()).to.equal(9087)
+        expect((await BoxV2Contract.retrieve()).toString()).to.equal("9087")
     });
 
     it(" Must increment the values ", async function () {
@@ -26,6 +26,6 @@ describe("BoxV2 functionality", async () => {
         await BoxV2Contract.increment();
         await BoxV2Contract.increment();
 
-        expect(await BoxV2Contract.retrieve()).to.equal(1238)
+        expect((await BoxV2Contract.retrieve()).toString()).to.equal("1238")
     });
 });
