@@ -12,7 +12,7 @@ module.exports = {
   solidity: {
     version: "0.8.6",
     settings: {
-      optimizer: { enabled: true, runs: 2000 }
+      optimizer: { enabled: true, runs: 20 }
     }
   },
   networks: {
@@ -29,8 +29,9 @@ module.exports = {
     },
     goerli: {
       url: Goerli_RPC_PROVIDER,
-      accounts: [`0x${goerli_PRIVATE_KEY}`],
-      gas: 1000000//bug in hardhat
+      accounts: [`${goerli_PRIVATE_KEY}`],
+      gas: 10000000
+      //bug in hardhat
     }
   },
   paths: {
@@ -41,12 +42,12 @@ module.exports = {
   },
   etherscan: {
     apiKey: {
+      goerli: ETHERSCAN_API_KEY,
       //polygon
       // polygon: POLYGONSCAN_API_KEY,
-      mumbai_testnet: POLYGONSCAN_API_KEY,
+      // mumbai_testnet: POLYGONSCAN_API_KEY
 
       // //ethereum
-      goerli: ETHERSCAN_API_KEY,
       // mainnet: ETHERSCAN_API_KEY,
       // ropsten: ETHERSCAN_API_KEY,
       // rinkeby: ETHERSCAN_API_KEY,

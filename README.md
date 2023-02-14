@@ -85,3 +85,25 @@ Proxies for upgrading SC, patterns:
 #### links
  - gnosis chain safe, multi sig wallet =https://app.safe.global/
  - https://docs.openzeppelin.com/defender/guide-timelock-roles
+- https://docs.openzeppelin.com/upgrades-plugins/1.x/hardhat-upgrades
+
+
+
+- ###
+- Nothing to compile
+Successfully submitted source code for contract
+contracts/Box_v2.sol:Box_v2 at 0x22970b73fc20bFC2CF0e5522491b248d62fA4F9C
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract Box_v2 on Etherscan.
+
+we must removed unused netowrk otherise it fail to verify the network
+https://www.npmjs.com/package/@openzeppelin/hardhat-upgrades
+https://github.com/crytic/slither
+https://docs.openzeppelin.com/upgrades-plugins/1.x/api-hardhat-upgrades
+
+
+- new txn timelock
+- target address proxy admin address
+- predeccos rand saolt 0x0000000000000000000000000000000000000000
+- 
